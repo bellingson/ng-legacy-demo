@@ -1,0 +1,11 @@
+idea {
+
+    module {
+        excludeDirs = [
+                file("node_modules"),
+                file("dist"),
+                file("coverage")
+        ]
+    }
+
+}

@@ -1,0 +1,8 @@
+version: '3'
+services:
+  product-app:
+    image: "product-app"
+    ports:
+     - "80:80"
+  productapi:
+    image: "product-api"

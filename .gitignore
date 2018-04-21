@@ -1,5 +1,17 @@
 # Compiled class file
+
+.gradle
+gradle
+
+*.ipr
+*.iws
+*.iml
+
 *.class
+
+dist
+node_modules
+build
 
 # Log file
 *.log
