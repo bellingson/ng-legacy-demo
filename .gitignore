@@ -12,6 +12,7 @@ gradle
 dist
 node_modules
 build
+yarn.lock
 
 # Log file
 *.log
