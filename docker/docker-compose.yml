@@ -4,5 +4,8 @@ services:
     image: "product-app"
     ports:
      - "80:80"
+    labels:
+    - "productapi"
+
   productapi:
     image: "product-api"
