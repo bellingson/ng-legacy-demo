@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
+
+    <title>Stuff Mart - Everything You Need</title>
+</head>
+<body>
+
+<div class="top-bar">
+    <div class="container">
+        <div class="pull-left home">
+            <span class="glyphicon glyphicon-shopping-cart"></span>
+            <a class="home" href="/">Stuff Mart</a>
+        </div>
+        
+    </div>
+</div>
+
+<div class="container body">
+
+    <div class="row product-list">
+
+        <div  th:each="product : ${products}" class="col-xs-12 col-sm-4">
+
+            <div class="product">
+
+                <h3 th:text="${product.name}">Product Name</h3>
+
+                <a th:href="${'/product/' + product.id}"><img th:src="${product.img}" th:alt="${product.name}"></a>
+
+                <div class="buy-bar clearfix">
+                    <div class="float-left">
+                        $<span th:text="${#numbers.formatDecimal(product.price, 0, 'COMMA', 2, 'POINT')}"></span>
+                    </div>
+                    <div class="float-right">
+                        <a th:href="${'/product/' + product.id}" class="btn btn-primary">Buy</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="admin">
+    &copy; 2018 StuffMart <br>
+    <a href="/app/#/login">Login</a>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

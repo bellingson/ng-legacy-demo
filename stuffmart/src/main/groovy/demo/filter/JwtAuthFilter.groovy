@@ -39,8 +39,6 @@ class JwtAuthFilter implements Filter {
     @Override
     void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 
-        log.severe("do filter")
-
         HttpServletRequest req = request
         HttpServletResponse resp = response
 
@@ -53,11 +51,8 @@ class JwtAuthFilter implements Filter {
 
     void checkJwtAuthorization(HttpServletRequest request, HttpServletResponse response) {
 
-         log.severe("check jwt: ${request.requestURI}")
-
          String token = request.getHeader(AUTH_HEADER)
          if(token == null) {
-             log.severe("no jwt header: ${request.requestURI}")
              return
          }
 
@@ -87,8 +82,6 @@ class JwtAuthFilter implements Filter {
         securityContext.setAuthentication(auth)
 
         request.session.setAttribute('SPRING_SECURITY_CONTEXT', securityContext)
-
-        log.severe("jwt set user in session: ${user.email} : ${request.requestURI}")
 
     }
 

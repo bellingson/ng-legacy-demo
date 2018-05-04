@@ -1,11 +1,13 @@
 version: '3'
 services:
-  product-app:
-    image: "product-app"
+  product-admin:
+    image: "product-admin"
     ports:
      - "80:80"
     labels:
-    - "productapi"
+    - "productadmin"
 
-  productapi:
-    image: "product-api"
+  stuffmart:
+    image: "stuffmart"
+    ports:
+    - "8080:8080"

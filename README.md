@@ -7,6 +7,7 @@ Project Uses
 - Angular 
 - Angular CLI
 - Spring Boot
+- JWT
 - Groovy     
 - gradle
 - Docker
@@ -20,11 +21,15 @@ Instructions
 
 Build it:
 
-./bin/build
+./docker/build
 
 This will build the two modules and create two docker containers.
 
 Run It:
 
-docker-compose -f docker/docker-compose.yml up -d
+./docker/up
+
+Stop:
+./docker/down
+
 
