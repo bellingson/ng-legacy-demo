@@ -1,7 +1,9 @@
+
 version: '3'
 services:
   product-admin:
     image: "product-admin"
+    container_name: product-admin
     ports:
      - "80:80"
     labels:
@@ -9,5 +11,6 @@ services:
 
   stuffmart:
     image: "stuffmart"
+    container_name: stuffmart
     ports:
     - "8080:8080"

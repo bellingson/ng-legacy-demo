@@ -33,3 +33,11 @@ Stop:
 ./docker/down
 
 
+Development Instructions
+-----------------------------------------------------------
+
+cd stuffmart
+gradle bootRun
+
+cd product-admin
+npm start

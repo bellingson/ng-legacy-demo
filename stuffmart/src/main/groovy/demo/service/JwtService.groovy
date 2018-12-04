@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service
 @Service
 class JwtService {
 
+    // do not embed jwtSecret in production code
     final static String jwtSecret = '9835ea61e43f6f51c74910a7b603c918a7bf0425!'
 
     String createToken(User user, Date expires) {
@@ -23,8 +24,4 @@ class JwtService {
                 .withExpiresAt(expires)
                 .sign(Algorithm.HMAC256(jwtSecret))
     }
-
-
-
-
 }
